@@ -26,7 +26,6 @@ router.post('/', async (ctx) => {
 
   try {
     await schema.validateAsync(req);
-    req.agency = await repository.Agency.findAll({ where: { id: req.agency_id } });
     ctx.body = await repository.Artist.create(req);
   }
   catch (err) {
@@ -50,7 +49,6 @@ router.put('/:id', async (ctx) => {
 
   try {
     await schema.validateAsync(req);
-    req.agency = await repository.Agency.findAll({ where: { id: req.agency_id } });
     ctx.body = await repository.Artist.update(req);
   }
   catch (err) {
