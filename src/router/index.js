@@ -1,24 +1,15 @@
 const Router = require('koa-router');
-const db = require('../db');
+const repository = require('../db/repository');
 
 module.exports = () => {
   const router = new Router();
 
   router.get('/agencies', async (ctx) => {
-
-    let results = null;
-    await db.Agency.findAll({ include: db.Artist }).then(res => results = res).catch(err => results = err);
-
-    ctx.body = results;
+    ctx.body = await repository.Agency.AgencyFindAllIncludeArtist();
   });
 
   router.get('/artists', async (ctx) => {
-
-    let results = null;
-
-    await db.Artist.findAll({ include: db.Agency }).then(res => results = res).catch(err => results = err);
-
-    ctx.body = results;
+    ctx.body = await repository.Artist.ArtistFindAllIncludeAgency();
   });
 
   return router;
