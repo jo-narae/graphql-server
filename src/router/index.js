@@ -1,8 +1,6 @@
 const Router = require('koa-router');
 const db = require('../db');
-
-var sequelize = require('../db').sequelize;
-sequelize.sync();
+const repository = require('../db/repository');
 
 module.exports = () => {
   const router = new Router();
@@ -10,6 +8,7 @@ module.exports = () => {
   router.get('/agencies', async (ctx) => {
 
     let results = null;
+    console.log(repository.agency.agencyFindAll());
 
     await db.Agency.findAll({ include: db.Artist }).then(res => results = res).catch(err => results = err);
 
