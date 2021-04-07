@@ -1,0 +1,41 @@
+{
+  "development": {
+    "username": "root",
+    "password": "1234",
+    "database": "entertainment",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "define": {
+      "freezeTableName": true,
+      "timestamps": false,
+      "createdAt": false,
+      "updatedAt": false
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "1234",
+    "database": "entertainment",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "define": {
+      "freezeTableName": true,
+      "timestamps": false,
+      "createdAt": false,
+      "updatedAt": false
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": "1234",
+    "database": "entertainment",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "define": {
+      "freezeTableName": true,
+      "timestamps": false,
+      "createdAt": false,
+      "updatedAt": false
+    }
+  }
+}
