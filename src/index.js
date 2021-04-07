@@ -7,7 +7,7 @@ const router = require('./router');
 
 const app = new Koa()
 
-var sequelize = require('./db').sequelize;
+var sequelize = require('./db/models').sequelize;
 sequelize.sync();
 
 // Real ip get
