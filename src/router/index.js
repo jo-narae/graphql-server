@@ -1,6 +1,5 @@
 const Router = require('koa-router');
 const db = require('../db');
-const repository = require('../db/repository');
 
 module.exports = () => {
   const router = new Router();
