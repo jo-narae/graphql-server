@@ -1,12 +1,12 @@
 const models = require('../models');
 
-const ArtistFindAllIncludeAgency = async () => {
+async function findAll(args) {
   let results = null;
-  await models.Artist.findAll({ include: models.Agency }).then(res => results = res).catch(err => results = err);
+  await models.Artist.findAll(args).then(res => results = res).catch(err => results = err);
   return results;
 }
 
 module.exports = {
-  ArtistFindAllIncludeAgency
+  findAll
 };
 
