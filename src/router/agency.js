@@ -21,7 +21,7 @@ router.post('/', async (ctx) => {
   const schema = Joi.object({
     name: Joi.string().min(1).max(50).required(),
     ceo: Joi.string().min(1).max(50).required(),
-    address: Joi.string().min(1).max(50).required()
+    address: Joi.string().min(1).max(100).required()
   });
 
   try {
