@@ -42,7 +42,7 @@ router.put('/:id', async (ctx) => {
     id: Joi.number().required(),
     name: Joi.string().min(1).max(50),
     ceo: Joi.string().min(1).max(50),
-    address: Joi.string().min(1).max(50)
+    address: Joi.string().min(1).max(100)
   });
 
   req.id = ctx.params.id;
