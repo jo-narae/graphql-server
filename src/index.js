@@ -5,6 +5,9 @@ import session from 'koa-session'
 
 const router = require('./router');
 
+import { ApolloServer } from 'apollo-server-koa';
+import schema from './graphql';
+
 const app = new Koa()
 
 var sequelize = require('./db/models').sequelize;
@@ -31,6 +34,10 @@ app.use(koaBody())
 // router
 const _router = router(router);
 app.use(_router.routes());
+
+// apollo
+const apollo = new ApolloServer({ schema });
+apollo.applyMiddleware({ app });
 
 app.listen(process.env.port || 8080, () => console.log(`server started http://localhost:${process.env.port || 8080}`))
 

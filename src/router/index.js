@@ -1,6 +1,4 @@
 const Router = require('koa-router');
-const models = require('../db/models');
-const repository = require('../db/repository');
 
 const agency = require('./agency');
 const artist = require('./artist');
