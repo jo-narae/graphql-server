@@ -7,11 +7,11 @@ const repository = require('../db/repository');
 const Joi = require('joi');
 
 router.get('/', async (ctx) => {
-  ctx.body = await repository.Music.findAll({ include: models.Album });
+  ctx.body = await repository.Album.findAll({ include: models.Album });
 });
 
 router.get('/:id', async (ctx) => {
-  ctx.body = await repository.Music.findAll({ where: { id: ctx.params.id }, include: models.Album });
+  ctx.body = await repository.Album.findAll({ where: { id: ctx.params.id }, include: models.Album });
 });
 
 router.post('/', async (ctx) => {
