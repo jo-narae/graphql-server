@@ -4,7 +4,7 @@
 
 ```
 npm install
-npm run dev
+npm start
 ```
 
 ## 마이그레이션 명령문
