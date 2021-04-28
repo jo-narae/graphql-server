@@ -1,13 +1,23 @@
 const models = require('../../db/models');
 const repository = require('../../db/repository');
 
+const graphqlFields = require('graphql-fields');
+
 const agencies = async (obj , args , context , info) => {
-  const isExistArtists = info.fieldNodes[0].selectionSet.selections.filter(item => item.name.value === 'artists');
 
-  let queryFilter = {};
+  let queryFilter = { include: [] };
 
-  if (isExistArtists.length) {
-    queryFilter.include = [ { model: models.Artist } ];
+  if (Object.keys(graphqlFields(info)).some(artists => artists == 'artists')) {
+    queryFilter.include.push({ model: models.Artist, include: [] });
+
+    const artistObject = graphqlFields(info).artists;
+    const artistsInclude = queryFilter.include[0].include;
+    if (Object.keys(artistObject).some(members => members == 'members')) {
+      artistsInclude.push({ model: models.Member });
+    }
+    if (Object.keys(artistObject).some(albums => albums == 'albums')) {
+      artistsInclude.push({ model: models.Album });
+    }
   }
 
   if(args.id) {

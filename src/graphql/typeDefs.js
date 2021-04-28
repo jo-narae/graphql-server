@@ -18,19 +18,64 @@ export default gql`
     name: String!
     ceo: String!
     address: String!
-    artists: [Artists]
+    artists(id: Int): [Artists]
   }
 
   type Artists {
     id: Int!
     name: String!
     debut_date: String!
-    agency_id: Int!
+    members: [Members]
+    albums: [Albums]
+    agency: Agency
+  }
+
+  type Artist {
+    id: Int!
+    name: String!
+    debut_date: String!
+    agency: Agency
+  }
+
+  type Members {
+    id: Int!
+    name: String!
+    age: Int!
+    gender: String!
+    position: String!
+    artist: Artist
+    agency: Agency
+  }
+
+  type Albums {
+    id: Int!
+    name: String!
+    release_date: String!
+    artist: Artist
+  }
+
+  type Album {
+    id: Int!
+    name: String!
+    release_date: String!
+    artist: Artist
+  }
+
+  type Musics {
+    id: Int!
+    track: Int!
+    name: String!
+    title: Boolean!
+    play_time: String!
+    album: Album
   }
 
   type Query {
     agencies(id: Int): [Agencies]!
     artists(id: Int): [Artists]!
+    members(id: Int): [Members]!
+    albums(id: Int): [Albums]!
+    musics(id: Int): [Musics]!
   }
 
   type Mutation {
