@@ -5,10 +5,10 @@ const graphqlFields = require('graphql-fields');
 
 const artists = async (obj , args , context , info) => {
 
-  let queryFilter = { include: [] };
+  let queryFilter = {};
 
   const artistObject = graphqlFields(info);
-  const artistsInclude = queryFilter.include;
+  const artistsInclude = [];
   if (Object.keys(artistObject).some(members => members == 'agency')) {
     artistsInclude.push({ model: models.Agency });
   }
@@ -18,6 +18,8 @@ const artists = async (obj , args , context , info) => {
   if (Object.keys(artistObject).some(albums => albums == 'albums')) {
     artistsInclude.push({ model: models.Album });
   }
+
+  queryFilter.include = artistsInclude;
 
   if(args.id) {
     queryFilter.where = { id: args.id };

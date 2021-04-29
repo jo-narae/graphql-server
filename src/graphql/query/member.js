@@ -4,17 +4,15 @@ const repository = require('../../db/repository');
 const graphqlFields = require('graphql-fields');
 
 const members = async (obj , args , context , info) => {
-  let queryFilter = { include: [] };
+  let queryFilter = {};
 
   const artistObject = graphqlFields(info);
   if (Object.keys(artistObject).some(members => members == 'artist')) {
-    queryFilter.include.push({ model: models.Artist, include: [] });
+    queryFilter.include = [{ model: models.Artist, include: [] }];
 
     const artistObject = graphqlFields(info).artist;
-    const artistsInclude = queryFilter.include[0].include;
-
     if (Object.keys(artistObject).some(agency => agency == 'agency')) {
-      artistsInclude.push({ model: models.Agency });
+      queryFilter.include[0].include = [{ model: models.Agency }];
     }
   }
 
