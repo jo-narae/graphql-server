@@ -1,5 +1,6 @@
-import typeDefs from './typeDefs';
 import { makeExecutableSchema } from 'apollo-server-koa';
+
+import typeDefs from './type';
 
 import agencyQuery from './query/agency';
 import artistQuery from './query/artist';
