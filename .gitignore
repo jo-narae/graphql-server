@@ -27,3 +27,5 @@ coverage
 coin.config.js
 coin.config.dev.js
 db.config.js
+
+.idea
