@@ -4,26 +4,26 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     try {
       // Insert artist data
-      await queryInterface.sequelize.query(`INSERT INTO artist (name,debut_date,agency_id) VALUES
-      ('BTS','2013-06-13',1),
-      ('Tomorrow x Together','2019-03-04',1),
-      ('BoA','2000-08-25',2),
-      ('TVXQ','2003-12-26',2),
-      ('Super Junior','2005-11-06',2),
-      ('Girls Generation','2007-08-05',2),
-      ('SHINee','2008-05-25',2),
-      ('EXO','2012-04-08',2),
-      ('Red Velvet','2014-08-01',2),
-      ('J.Y. Park','1994-09-01',3),
-      ('2PM','2008-09-04',3),
-      ('DAY6','2015-09-07',3),
-      ('TWICE','2015-10-20',3),
-      ('Stray Kids','2018-03-25',3),
-      ('ITZY','2019-02-12',3),
-      ('BIGBANG','2006-08-19',4),
-      ('WINNER','2014-08-17',4),
-      ('iKON','2015-09-15',4),
-      ('BLACKPINK','2016-08-08',4);`);
+      await queryInterface.sequelize.query(`INSERT INTO artist (name,debut_date,agency_id,description,img) VALUES
+      ('BTS','2013-06-13',1,'K-POP을 대표하는 세계 최정상급 월드스타 보이그룹으로, 연일 가요계에 신기록을 세우며 K-POP의 새 역사를 써내려가고 있다.','https://w.namu.la/s/aaa33714f2813239d3b77acaf226a42dddee72ec152bccc55ea41348b58e428d9493bebcb50bc1e403dc5cc2a739418dfde58d1a0b89115b94b7183400d9485eb298c95575eb59e18dc0efb6ebf87efd24eeaf6b15edfd7469c4d1b1e23d0652e75096f9ec04ea76266a3e446b46fbdc'),
+      ('Tomorrow x Together','2019-03-04',1,'투모로우바이투게더(TOMORROW X TOGETHER)는 빅히트 엔터테인먼트 소속 5인조 다국적 보이그룹이다. 약칭은 TXT이다.','https://w.namu.la/s/7d60ab28c3a5a5b40b28af27609429066a1e5d69660733713d1e61f064b275c5e1fce35431a22186724767461b5bd7947219d41a5913498ea03924eec304e855b617a301ed3e2fdb5ef483c966924d03a4c59ff80096a54ab984c45865a09c23c8899a83b422c7dac044c50f8134cff8'),
+      ('BoA','2000-08-25',2,'아시아의 별이라는 별명을 지니고 있으며 어린 나이에 데뷔해 대한민국 최초/최연소의 수식어를 여럿 달고 다닌 1세대 아이돌 출신 아티스트이다.','https://w.namu.la/s/7aa03302ea7e9c932c7754419a19d40ef151930fb186592604e56bd2a7c475dbac1d528eac9fc7919789dbb8621e88279e871c2a4e886f114ad9d93743c75b4a32b30e45f80bd1dba768048e655fa0e71467c96a36f4e26cbe46097de79e7b7d7ea3240d6201703bfe4c5a56bd26a65b'),
+      ('TVXQ','2003-12-26',2,'데뷔 당시에는 5인조 그룹이었으나 2010년 3월 24일까지 6년 3개월 간 5인 체제로 활동하였고, 2010년 8월부터 2인조로 활동하기 시작했다.','https://ww.namu.la/s/c10f56fb0a2239507f10e22ba6e1f1f01e43a36a5bf0ea86d4c48f4d8bb2d53015dfcbfe4b3c95b935c75f244cb4834b6d4dd389c3ee7e95895d5272bb4b78ee7f04456ab432c21e01454caceeb20d37e2d47d4ac17e11cad1264b7528b62c948793f80fa0877701879d2449f99dda7e'),
+      ('Super Junior','2005-11-06',2,'슈퍼주니어는 ‘아시아의 등용문’이라는 타이틀로 데뷔했으며 첫 데뷔 무대에 1000명이 넘는 팬들이 운집한 이례적인 기록은 아직도 깨지지 않고 있다', 'https://w.namu.la/s/8c7eb707a9af3f19e206645622a931e5f5ed6b5f573d72bbfc14096c7e696d402ebf2ebd0691cf31ae2760e2427a13a77ad0410a7a7c1ac8547af55fd0a975ac47729ca875e0a6978e11e62350305f6526d1f1bcb5e10346eb671386695549a5796ff3fde5ea8d1b3bf0c0918665585a'),
+      ('Girls Generation','2007-08-05',2,'K-POP을 대표하는 국민 걸그룹으로서 현재는 ‘레전드 걸그룹’, ‘걸그룹계 교과서’ 등으로 불리며 명실상부 연예계에서 가장 성공적인 커리어를 쌓은 걸그룹으로 평가 받는다.','https://w.namu.la/s/d4d1ab553bd8d18fc63812a6c81d7372f3aa95daa2d7e44c8b1b9256309c151627c167e48e2379e61f87bbebf1d5724a538fac1b1c7a5356b10fc842f39757a0a2ed84de249788a0a8bdc47cb18496dc20edd17b5b8310061c7e4322a4645f8fcb9f74041b08fbc88cf11c6d4bb95e2f'),
+      ('SHINee','2008-05-25',2,'컨템퍼러리 밴드를 표방하여 데뷔했으며, 어리고 귀여운 이미지와 그룹 이름 탓에 ‘빛돌이’라는 별명으로 불리기도 한다.', 'https://w.namu.la/s/1e94a43730ee108fa680d9901ff6dc862776f457be8bf56113e953ed54667f5762029ee470af5aa9b468a51fd3058ed5de0ed28d5f319455409a55569f8f1edcd652823b8aa6e69099c77d9bc7a2b28fe55856da85f32ea85eed63f42e093246bc51ced773ee5de8a14815595b1430b5'),
+      ('EXO','2012-04-08',2,'EXO라는 이름은 태양계 외행성을 뜻하는 ‘exoplanet’에서 모티브를 얻었으며, ‘미지의 세계에서 온 새로운 스타’라는 의미를 담고 있다.','https://ww.namu.la/s/613496b5fd8bc36f498ff868cae96eae76331bd19536ce3fdf37551b0960fca29985eea37314a516dfc116a1d031f03eeb4a76895ca828aa84a8c83537e587aba88fc93db228fe7e1eed627e7bca228668ff12b6b61520f80c619313572f7247535eea454c2e32a1ae259c3987305e76'),
+      ('Red Velvet','2014-08-01',2,'레드벨벳은 f(x)의 독특함과 엉뚱한 소녀의 이미지를 이어받으면서 소녀시대의 친근함, 발랄하고 사랑스러운 이미지도 계승하여 두 선배 그룹의 아이덴티티를 융화한 컨셉을 추구한다.','https://w.namu.la/s/2f24458886ac1b38ffe51887f56a2c158849708aae53428e1df23ebde37b7e67dbe6d0fce8e1595bddda802eca960b56a0ee63abbe7c6139d8d25fdd082d7560054b4e8c8e06af9a14c9eb30aad6b30734f46258bcb71c3cf6dd788ae00d765bfa959b5282e36bcf9661459fe53732fb'),
+      ('J.Y. Park','1994-09-01',3,'JYP엔터테인먼트의 프로듀서로서 아티스트 및 프로덕션, 영업 업무를 맡는다. 특히 회사 내 신인 아티스트 런칭 때는 최종 결정 권한을 맡는 것으로 보인다.','https://w.namu.la/s/461a23b691547a18ba6af974d8d3d10a5424790ec5f409b61e1f53f75e277219aa1d6980d8695e000bb1b3c7d1020a6b14d8079ec2547fcc8920b7bff1b42fae54bd458b20e56856b5690c3d4dc94ba80287bfc7e9b4e76443069cc10e719134491fdc4c2a77b26119ce78a1e04c09db'),
+      ('2PM','2008-09-04',3,'"하루 중 가장 뜨거운 오후 두시에 듣기 좋은 음악을 한다"는 의미를 담고 있는 6인조 다국적 보이그룹이다.','https://w.namu.la/s/042b390652559d26edf0839d9300f734072d4462e733f2fef0d3d770aa72f3ee8a6c60dc6d34a9dce552c9e334507d807b78a94a04a434075847546e1be5a977c0a0bebcb89aedd7535a896497110adeaa4b707615d4160e7571a8a783d800670483bc880a8d5c9f3bdf13746e3f386e'),
+      ('DAY6','2015-09-07',3,'JYP의 5인조 밴드 다국적 보이그룹이며 음악적 스펙트럼이 매우 넓고 특정 장르에 국한되지 않는다.','https://w.namu.la/s/1e6b7d22ae8f5b48af63b05cbbcefda3b76c670eb0b98de8b71499e855ceebd912fcf722408ade2cd19e7146715afab116f557583e53ec83480ae8693b4c9974a9fffd5e83a9af5c53bc2b2993fbc3a0f6cdd1e0282030388d0d676a07c5e97586cef1286d9843c784350876610390a2'),
+      ('TWICE','2015-10-20',3,'TWICE는 눈으로 한 번, 귀로 한 번 감동을 준다는 의미로 데뷔년도부터 지금까지 많은 기록들을 세우고 있으며, K-POP을 대표하는 여자그룹 중 하나로 활동하고 있다.','https://w.namu.la/s/4882104f184435e246e6ca88e9880a49969b947ba0bcafa3f9afce085dc99396bb3baa604b77f6278181652cef0f22a4a21693031fd5c7a8541291692f06132abd28ae2b065750e2695ba9fa9ecb12c351d2a567926e43e12b2d1238fd8c334585038950e8a22d8c9faab5f1e533eb22'),
+      ('Stray Kids','2018-03-25',3,'스트레이키즈(Stray Kids)는 ‘방황하는 아이들’ 이라는 뜻으로, 기존의 틀에서 벗어나 8명이 똘똘 뭉쳐 자신을 길을 스스로 찾아 나가겠다는 포부를 담고 있다.','https://w.namu.la/s/1cc98090766a64864153fe4625e6b17e71e0795d62f72bf1e18ea4a86b368838ecca312065b3b0a7c3da374899a559f090c1ded68a6ba3fb41574e09d912c0ca659e42a87823847c3279b2fa6f5c6c206012790ae90fae88525e4d35a43a7d3e659ae0ff10ee1aa82ca641b5c6858d95'),
+      ('ITZY','2019-02-12',3,'걸그룹 명가 JYP에서 야심 차게 낸 걸그룹으로, 유튜브 및 수상 외 음반이나 음원 등 다방면으로 성과를 입증하고 있으며, K-POP 걸그룹의 차세대 주자로 자리매김했다.', 'https://w.namu.la/s/ac6712c6359b32abef9b66dd883d5e12c414e101316c34e54aee4c348904c1f48054637bb972f1462e9df1a2a3e004e849659f878cf87ba85f96d69bbded1e2565114cfc612824f79b0da36e3f58a699e2a364a88d3ae35e0cffaec3ae4aec06b948d1771c6bb6c8a47a07ad0818802b'),
+      ('BIGBANG','2006-08-19',4,'젊은 층의 패션 트렌드와 이후 쏟아져나온 아이돌 그룹 및 대한민국 대중음악에 엄청난 영향력을 끼친 그룹이며 사실상 현재의 YG 엔터테인먼트를 세운 장본인이다.', 'https://w.namu.la/s/a303e8a783c1073876b97ed343ab8913bf46a67ad6479f4b2a67f69f02dc04ab74254c868e7c9360a522fca3950f2ba35918c0e9ec64d676c9d9e2fdae1096daf890b07f463b64ddca04ca1319f2c1d769b50d24075a9956efe33e21cba4b83d'),
+      ('WINNER','2014-08-17',4,' YG 연습생 간 서바이벌 프로그램을 방영하며 해당 프로그램에서 WIN, 말 그대로 승리하여 대중의 선택을 받은 연습생들이 이 프로그램의 승자인 WINNER로 데뷔했다.','https://w.namu.la/s/450b0f1d607030e0da2e2ab1db2dec44a79d9c7822be7ab326bf963f2f710b435f1621cc1efb4d581a86dd28c389564b10b9de6b7df31af082a600ae865c18660f8ffa78848ddfe5c86157330a092fb153cc22c77f26092510e87356e77862daa58f71dd2b734b9e3c4325c6ecddc151'),
+      ('iKON','2015-09-15',4,'iKON이란 그룹명은 영어 icon의 c를 k로 바꾼 것으로, 한국을 대표하는 아이콘이 되라는 의미가 담겨 있다.','https://w.namu.la/s/d098e175ccbb05ad5416dbf8430a717be50a97ad00fa9c61f5bc100c967518b5d8ba672c538a878707edf44b0d129495cba1e56c62b89db16464177f54f8afcc59814b9968e19b40f6c69c66c6ddb6d7d20748a6ed1cf7225898515a7f3247879c2e3a61720779a4a50355199223feed'),
+      ('BLACKPINK','2016-08-08',4,'YG엔터테인먼트 소속 4인조 다국적 걸그룹이며, K-POP을 대표하는 월드스타 걸그룹으로 데뷔 후 부터 현재까지 엄청난 기록들을 세우고 있다.','https://w.namu.la/s/8a48a723eaa6dee92d4c56df53c874d4c98c21008487ab6bb0290722727fb0e1d770508d20a52ed8ac2de7066cf68fb661838814c3f870cba92176a758f458f8278127aba0a0a790fd7643f48d77d0441fdc36cfb0e1d837963b449a13610c21759fd7b6cc13b0983dea4be6aa8fc040');`);
 
       return Promise.resolve();
     } catch (e) {

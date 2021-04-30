@@ -4,6 +4,7 @@ export default `
     name: String!
     release_date: String!
     artist: Artist
+    img: String!
   }
 
   type Album {
@@ -11,5 +12,6 @@ export default `
     name: String!
     release_date: String!
     artist: Artist
+    img: String!
   }
 `;

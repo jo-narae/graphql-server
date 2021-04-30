@@ -14,6 +14,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATEONLY,
         allowNull: false
       },
+      img: {
+        type: DataTypes.TEXT,
+        allowNull: false
+      },
+      description: {
+        type: DataTypes.TEXT,
+        allowNull: false
+      },
       agency_id: {
         type: DataTypes.INTEGER(11).UNSIGNED,
         allowNull: false

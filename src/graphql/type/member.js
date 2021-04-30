@@ -7,5 +7,6 @@ export default `
     position: String!
     artist: Artist
     agency: Agency
+    img: String!
   }
 `;

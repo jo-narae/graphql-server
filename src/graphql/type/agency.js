@@ -4,6 +4,7 @@ export default `
     name: String!
     ceo: String!
     address: String!
+    img: String!
   }
 
   type Agencies {
@@ -12,5 +13,6 @@ export default `
     ceo: String!
     address: String!
     artists(id: Int): [Artists]
+    img: String!
   }
 `;
