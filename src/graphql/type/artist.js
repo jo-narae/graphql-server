@@ -7,6 +7,7 @@ export default `
     albums: [Albums]
     agency: Agency
     img: String!
+    description: String!
   }
 
   type Artist {
@@ -15,5 +16,6 @@ export default `
     debut_date: String!
     agency: Agency
     img: String!
+    description: String!
   }
 `;
