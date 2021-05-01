@@ -15,7 +15,7 @@ module.exports = () => {
   router.use('/artists', artist.routes());
   router.use('/members', member.routes());
   router.use('/albums', album.routes());
-  router.use('/musics', music.routes());
+  router.use('/music', music.routes());
 
   return router;
 };
