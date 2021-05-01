@@ -4,6 +4,6 @@ export default `
     artists(id: Int): [Artists]!
     members(id: Int): [Members]!
     albums(id: Int): [Albums]!
-    musics(id: Int): [Musics]!
+    music(id: Int): [Music]!
   }
 `;

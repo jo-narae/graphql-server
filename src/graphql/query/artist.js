@@ -16,7 +16,8 @@ const artists = async (obj , args , context , info) => {
     artistsInclude.push({ model: models.Member });
   }
   if (Object.keys(artistObject).some(albums => albums == 'albums')) {
-    artistsInclude.push({ model: models.Album });
+    // 비즈니스 로직상 앨범이 나오면 무조건 노래는 존재함
+    artistsInclude.push({ model: models.Album, include: [{ model: models.Music }] });
   }
 
   queryFilter.include = artistsInclude;

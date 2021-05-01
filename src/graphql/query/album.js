@@ -20,6 +20,10 @@ const albums = async (obj , args , context , info) => {
     queryFilter.where = { id: args.id };
   }
 
+  // 비즈니스 로직상 앨범이 나오면 무조건 노래는 존재함
+  if(Object.keys(queryFilter).length == 0) queryFilter.include = [{ model: models.Music }];
+  else queryFilter.include.push({ model: models.Music })
+
   return await repository.Album.findAll(queryFilter);
 }
 

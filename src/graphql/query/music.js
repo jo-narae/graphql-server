@@ -3,7 +3,7 @@ const repository = require('../../db/repository');
 
 const graphqlFields = require('graphql-fields');
 
-const musics = async (obj , args , context , info) => {
+const music = async (obj , args , context , info) => {
   let queryFilter = {};
 
   const albumObject = graphqlFields(info);
@@ -30,5 +30,5 @@ const musics = async (obj , args , context , info) => {
 }
 
 export default {
-  musics
+  music
 };

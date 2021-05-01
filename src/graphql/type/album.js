@@ -5,6 +5,7 @@ export default `
     release_date: String!
     artist: Artist
     img: String!
+    music: [Music]
   }
 
   type Album {
@@ -13,5 +14,6 @@ export default `
     release_date: String!
     artist: Artist
     img: String!
+    music: [Music]
   }
 `;

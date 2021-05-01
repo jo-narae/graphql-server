@@ -1,5 +1,5 @@
 export default `
-  type Musics {
+  type Music {
     id: Int!
     track: Int!
     name: String!
